@@ -6,5 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
 var routes_1 = __importDefault(require("./routes"));
 var app = express_1.default();
+var PORT = process.env.PORT || 8081;
 app.use(routes_1.default);
 app.listen(8081);
