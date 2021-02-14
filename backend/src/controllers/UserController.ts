@@ -20,7 +20,10 @@ export default {
         
         try{
             const response: QueryResult = await pool.query(`call sp_put_redirect ('${parsed}')`);
-            res.status(200).json(response.rows)
+            const result : QueryResult = await pool.query('select url from encurtar'); 
+            
+            response ? result : res.status(404).json('HTTP 404');
+            res.status(200).json(result.rows[0])
         }catch(e){
             return res.status(404).json('HTTP 404');
         }
