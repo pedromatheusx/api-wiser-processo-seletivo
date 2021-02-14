@@ -1,10 +1,12 @@
 {
-  "name": "typescriptAula",
+  "name": "api-wiser-processo-seletivo",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT", 
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js"
   },
   "devDependencies": {
     "ts-node-dev": "^1.1.1",
